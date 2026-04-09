@@ -1,0 +1,15 @@
+[Unit]
+Description=Data Acquisition System (MCC 134)
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /home/pi/Desktop/data_acquisition/start.sh
+WorkingDirectory=/home/pi/Desktop/data_acquisition
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+RestartSec=5
+User=pi
+
+[Install]
+WantedBy=multi-user.target
